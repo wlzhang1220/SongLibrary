@@ -1,0 +1,36 @@
+@SongLibrary_HostAddress = http://localhost:5132
+@getId = 2
+@id = 1
+
+GET {{SongLibrary_HostAddress}}/song
+
+###
+
+GET {{SongLibrary_HostAddress}}/song/{{getId}}
+
+###
+
+DELETE {{SongLibrary_HostAddress}}/song/{{id}}
+
+###
+
+PUT {{SongLibrary_HostAddress}}/song/{{id}}
+Content-Type: application/json
+{
+    "id": 1,
+    "title": "Another Song",
+    "artist": "NotYou",
+    "year": 2000
+}
+
+###
+
+POST {{SongLibrary_HostAddress}}/song/
+Content-Type: application/json
+{
+    "title": "Another Song",
+    "artist": "NotYou",
+    "year": 2000
+}
+
+###
